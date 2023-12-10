@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
 <div id="mainDiv">
     <div id="content">
         <div id="code">
@@ -19,9 +20,11 @@
             <span class="comments">在这特别的一天，我想向你送上最诚挚的生日祝福!</span><br/>
             <span class="comments">送你一个生日蛋糕，祝你生日快乐!!!</span><br/>
             <span class="comments">愿你在新的一岁里笑逐颜开，同时祝愿你考研顺利，金榜题名！</span><br/>
-<!--            <br><br>-->
+            <br><br>
             <span class="comments"><b class="bb">冲冲冲！！！</b></span>
+            <audio src="./mp3/birthday.mp3" autoplay loop></audio>
         </div>
+
         <div id="loveHeart">
             <canvas id="garden"></canvas>
             <div id="words">
@@ -35,17 +38,24 @@
         </div>
     </div>
     <div id="copyright">
-        <center>
             <link rel="stylesheet" href="./css/cuplayer.css">
             <div style="position:absolute; top:50px; right:50px;">
-                <audio id="main_audio" autoplay="autoplay" preload="auto" loop>
-                    <source src="./mp3/birthday.mp3" type="audio/mpeg"/>
-                    <embed id="main_audio_ie8" hidden="true" autostart="true" height="0" width=0 loop="true"
-                           src="./mp3/birthday.mp3" autoplay="autoplay"/>
+                <audio id="main_audio" preload="auto" loop autoplay>
+                    <source src="./mp3/birthday1.mp3" type="audio/mpeg" >
                 </audio>
+<!--                <button id="btn1-play">播放</button>-->
                 <a class="c-white fs-12 icon-play rotate" id="btn-play" href="javascript:void(0);"></a>
             </div>
+
             <script type="text/javascript">
+                document.getElementById('btn-play').addEventListener('click', function () {
+                    var audio = document.getElementById('main_audio');
+                    if (audio.paused) {
+                        audio.play();
+                    } else {
+                        audio.pause();
+                    }
+                });
                 //获取picid函数
                 $(function () {
                     $("area").click(function () {
